@@ -18,9 +18,9 @@ function mergeSort(array) {
   }
 
   const middle = Math.floor(array.length / 2);
-  let left = array.slice(0,middle);
-  let right= array.slice(middle);
-  return mergeSort(left,right,array)
+  let left = mergeSort(array.slice(0,middle));
+  let right= mergeSort(array.slice(middle));
+  return merge(left,right,array)
 }
 
 function merge(left,right,array){
